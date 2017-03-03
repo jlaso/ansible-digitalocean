@@ -21,3 +21,11 @@ swapfile_vfs_cache_pressure: 50
 ssh_user: "{{ lookup('env', 'USER') }}"
 ssh_groups: "sudo"
 ssh_pub_key: "{{ lookup('file', '~/.ssh/id_dsa.pub') }}"
+
+# ruby
+chruby_version: 0.3.9
+ruby_install_version: 0.6.0
+ruby_version: 2.3.3
+rubies_location: /opt/rubies
+option_ruby_install_setsystem: true
+rubymine_version: 7.1.4

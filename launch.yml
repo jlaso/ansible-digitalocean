@@ -1,3 +1,4 @@
+---
 - hosts: localhost
   connection: local
   vars_files:
@@ -63,6 +64,10 @@
     - include: tasks/software.yml
     - include: tasks/security.yml
     - include: tasks/users.yml
+    - include: tasks/install_ruby.yml
+    - include: tasks/web_server/nginx.yml
+    - include: tasks/db/mysql.yml
+    - include: tasks/vcs/git.yml
 
   handlers:
     - include: handlers/site.yml
