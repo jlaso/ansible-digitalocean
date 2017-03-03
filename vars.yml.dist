@@ -29,3 +29,5 @@ ruby_version: 2.3.3
 rubies_location: /opt/rubies
 option_ruby_install_setsystem: true
 rubymine_version: 7.1.4
+role_dir: "{{ lookup('pipe','pwd')|dirname }}"
+role_name: "{{ lookup('pipe','pwd')|dirname|basename }}"
