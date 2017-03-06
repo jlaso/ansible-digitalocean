@@ -7,6 +7,7 @@ do_ssh_pub_key: "{{ lookup('file', '~/.ssh/id_dsa.pub') }}"
 do_ssh_private_key: "~/.ssh/id_dsa"
 
 # DO droplet settings
+do_name: test
 do_region: ams2
 do_size: 512mb
 do_image: "ubuntu-16-04-x64"
@@ -29,5 +30,8 @@ ruby_version: 2.3.3
 rubies_location: /opt/rubies
 option_ruby_install_setsystem: true
 rubymine_version: 7.1.4
-role_dir: "{{ lookup('pipe','pwd')|dirname }}"
-role_name: "{{ lookup('pipe','pwd')|dirname|basename }}"
+role_dir: "{{ lookup('pipe','pwd') }}"
+
+# mysql
+mysql_root_db_password: ~
+

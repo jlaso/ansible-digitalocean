@@ -11,7 +11,7 @@
       - mysql
 
   - name: MySQL | Preset root password
-    shell: echo mysql-server-5.5 mysql-server/{{item}} password {{mysql_root_password}} | debconf-set-selections
+    shell: echo mysql-server-5.5 mysql-server/{{item}} password {{mysql_root_db_password}} | debconf-set-selections
     when: ansible_os_family == "Debian" and mysql_present|failed
     with_items:
       - "root_password"

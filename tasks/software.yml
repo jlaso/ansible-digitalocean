@@ -4,13 +4,15 @@
 - name: Install essential packages
   apt: pkg="{{ item }}" state=latest
   with_items:
+    - htop
     - ntp
     - fail2ban
     - make
-    - mysql-server
+    #- mysql-server
     - mysql-client
+    - libmysqlclient-dev
 
-- name: Ensure services is running and enabled
+- name: Ensure services are running and enabled
   service: name="{{ item }}" state=running enabled=yes
   with_items:
     - ntp

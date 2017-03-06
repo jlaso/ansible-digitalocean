@@ -3,3 +3,4 @@ node_modules
 do/
 env/
 launch.retry
+destroy.retry

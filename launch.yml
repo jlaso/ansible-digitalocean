@@ -65,10 +65,12 @@
     - include: tasks/software.yml
     - include: tasks/security.yml
     - include: tasks/users.yml
-    - include: tasks/install_ruby.yml
-    - include: tasks/web_server/nginx.yml
     - include: tasks/db/mysql.yml
+    - include: tasks/web_server/nginx.yml
     - include: tasks/vcs/git.yml
+    - include: tasks/install_ruby.yml
 
   handlers:
     - include: handlers/site.yml
+
+    - debug: msg="IP is {{ do_droplet.droplet.ip_address }}"
